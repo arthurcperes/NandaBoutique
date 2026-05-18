@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Nanda Boutique
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- =========================================
+  MENU LATERAL
+  ========================================= -->
+
+  <aside
+    class="side-menu"
+    id="sideMenu"
+  >
+
+    <div class="side-menu-top">
+
+      <h3>
+        Menu
+      </h3>
+
+      <button
+        id="closeMenu"
+        aria-label="Fechar menu"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <nav class="side-links">
+
+      <a href="#inicio">
+        Início
+      </a>
+
+      <a
+        href="#colecao"
+        class="menu-filter"
+        data-category="all"
+      >
+        Tudo
+      </a>
+
+      <a
+        href="#colecao"
+        class="menu-filter"
+        data-category="vestidos"
+      >
+        Vestidos
+      </a>
+
+      <a
+        href="#colecao"
+        class="menu-filter"
+        data-category="conjuntos"
+      >
+        Conjuntos
+      </a>
+
+      <a
+        href="#colecao"
+        class="menu-filter"
+        data-category="blusas"
+      >
+        Blusas
+      </a>
+
+      <a
+        href="#colecao"
+        class="menu-filter"
+        data-category="bolsas"
+      >
+        Bolsas
+      </a>
+
+      <a href="#sobre">
+        Sobre a loja
+      </a>
+
+      <a href="#avaliacoes">
+        Avaliações
+      </a>
+
+      <a href="#contato">
+        Contato
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- =========================================
+  OVERLAY
+  ========================================= -->
+
+  <div
+    class="overlay"
+    id="overlay"
+  ></div>
+
+  <!-- =========================================
+  HEADER
+  ========================================= -->
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <!-- MENU ICON -->
+
+      <button
+        class="menu-btn"
+        id="openMenu"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <!-- LOGO -->
+
+      <a
+        href="#inicio"
+        class="logo-area"
+      >
+
+        <img
+          src="images/logo.jpg"
+          alt="Logo Nanda Boutique"
+          class="logo-img"
+        >
+
+        <div class="logo-text">
+
+          <strong>
+            Nanda Boutique
+          </strong>
+
+          <span>
+            Moda feminina elegante
+          </span>
+
+        </div>
+
+      </a>
+
+      <!-- MENU DESKTOP -->
+
+      <nav class="menu">
+
+        <a href="#inicio">
+          Início
+        </a>
+
+        <a href="#colecao">
+          Coleção
+        </a>
+
+        <a href="#sobre">
+          Sobre
+        </a>
+
+        <a href="#avaliacoes">
+          Avaliações
+        </a>
+
+        <a href="#contato">
+          Contato
+        </a>
+
+      </nav>
+
+      <!-- AÇÕES -->
+
+      <div class="nav-actions">
+
+        <button
+          class="circle-btn search-btn"
+          id="searchToggle"
+          aria-label="Ir para pesquisa"
+          type="button"
+        >
+          🔍
+        </button>
+
+        <button
+          class="login-btn"
+          id="loginButton"
+          type="button"
+        >
+          Entre ou cadastre-se
+        </button>
+
+        <button
+          class="circle-btn"
+          id="cartToggle"
+          aria-label="Abrir carrinho"
+          type="button"
+        >
+
+          👜
+
+          <span id="cartCount">
+            0
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- =========================================
+  HERO
+  ========================================= -->
+
+  <section
+    class="hero"
+    id="inicio"
+  >
+
+    <div class="container hero-grid">
+
+      <!-- TEXTO -->
+
+      <div class="hero-content">
+
+        <div class="hero-mini-tag">
+
+          <div class="mini-dot"></div>
+
+          boutique feminina premium
+
+        </div>
+
+        <h1>
+          Elegância, delicadeza e sofisticação em cada detalhe.
+        </h1>
+
+        <p>
+          A Nanda Boutique foi criada para mulheres que amam se vestir bem,
+          com peças modernas, sofisticadas e delicadas.
+        </p>
+
+        <!-- PESQUISA TOPO -->
+
+        <div
+          class="hero-search"
+          id="searchArea"
+        >
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Pesquisar vestidos, bolsas, conjuntos..."
+          >
+
+          <button
+            id="searchButton"
+            type="button"
+            aria-label="Pesquisar"
+          >
+            🔍
+          </button>
+
+        </div>
+
+        <!-- BOTÕES -->
+
+        <div class="hero-buttons">
+
+          <a
+            href="#colecao"
+            class="primary-btn"
+          >
+            Ver coleção
+          </a>
+
+          <a
+            href="#sobre"
+            class="secondary-btn"
+          >
+            Conhecer a boutique
+          </a>
+
+        </div>
+
+        <!-- CARDS -->
+
+        <div class="hero-cards">
+
+          <div class="hero-card">
+
+            <strong>
+              Moda sofisticada
+            </strong>
+
+            <span>
+              Peças elegantes e modernas.
+            </span>
+
+          </div>
+
+          <div class="hero-card">
+
+            <strong>
+              Compra simples
+            </strong>
+
+            <span>
+              Site fácil e intuitivo.
+            </span>
+
+          </div>
+
+          <div class="hero-card">
+
+            <strong>
+              Visual premium
+            </strong>
+
+            <span>
+              Rosa elegante e dourado sofisticado.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- IMAGEM -->
+
+      <div class="hero-image-area">
+
+        <img
+          src="images/modelo.jpg"
+          alt="Modelo Nanda Boutique"
+          class="hero-image"
+        >
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-badges">
+
+          <div class="badge">
+            Nova coleção
+          </div>
+
+          <div class="badge">
+            Moda feminina
+          </div>
+
+          <div class="badge">
+            Luxo clean
+          </div>
+
+        </div>
+
+        <div class="hero-image-text">
+
+          <h2>
+            Nova coleção feminina
+          </h2>
+
+          <p>
+            Looks sofisticados para mulheres modernas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+  COLEÇÃO
+  ========================================= -->
+
+  <section id="colecao">
+
+    <div class="container">
+
+      <div class="section-top">
+
+        <h2>
+          Lançamentos da coleção
+        </h2>
+
+        <p>
+          Explore as peças da boutique.
+        </p>
+
+      </div>
+
+      <!-- PRODUTOS -->
+
+      <div class="products-grid">
+
+        <!-- PRODUTO 1 -->
+
+        <article
+          class="product-card"
+          data-category="vestidos"
+          data-name="vestido elegance"
+        >
+
+          <div class="product-image">
+            aguardando imagem do vestido
+          </div>
+
+          <div class="product-content">
+
+            <div class="product-category">
+              Vestidos
+            </div>
+
+            <h3>
+              Vestido Elegance
+            </h3>
+
+            <p>
+              Modelo sofisticado para ocasiões especiais.
+            </p>
+
+            <div class="product-price-row">
+
+              <strong>
+                R$ 189,90
+              </strong>
+
+              <span>
+                até 6x
+              </span>
+
+            </div>
+
+            <button
+              class="primary-btn open-product"
+              type="button"
+            >
+              Ver produto
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- PRODUTO 2 -->
+
+        <article
+          class="product-card"
+          data-category="conjuntos"
+          data-name="conjunto rose"
+        >
+
+          <div class="product-image">
+            aguardando imagem do conjunto
+          </div>
+
+          <div class="product-content">
+
+            <div class="product-category">
+              Conjuntos
+            </div>
+
+            <h3>
+              Conjunto Rosé
+            </h3>
+
+            <p>
+              Elegância moderna com acabamento refinado.
+            </p>
+
+            <div class="product-price-row">
+
+              <strong>
+                R$ 249,90
+              </strong>
+
+              <span>
+                até 6x
+              </span>
+
+            </div>
+
+            <button
+              class="primary-btn open-product"
+              type="button"
+            >
+              Ver produto
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- PRODUTO 3 -->
+
+        <article
+          class="product-card"
+          data-category="blusas"
+          data-name="blusa delicacy"
+        >
+
+          <div class="product-image">
+            aguardando imagem da blusa
+          </div>
+
+          <div class="product-content">
+
+            <div class="product-category">
+              Blusas
+            </div>
+
+            <h3>
+              Blusa Delicacy
+            </h3>
+
+            <p>
+              Modelo delicado para o dia a dia elegante.
+            </p>
+
+            <div class="product-price-row">
+
+              <strong>
+                R$ 119,90
+              </strong>
+
+              <span>
+                até 6x
+              </span>
+
+            </div>
+
+            <button
+              class="primary-btn open-product"
+              type="button"
+            >
+              Ver produto
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- PRODUTO 4 -->
+
+        <article
+          class="product-card"
+          data-category="bolsas"
+          data-name="bolsa luxo"
+        >
+
+          <div class="product-image">
+            aguardando imagem da bolsa
+          </div>
+
+          <div class="product-content">
+
+            <div class="product-category">
+              Bolsas
+            </div>
+
+            <h3>
+              Bolsa Luxo
+            </h3>
+
+            <p>
+              Bolsa sofisticada com acabamento premium.
+            </p>
+
+            <div class="product-price-row">
+
+              <strong>
+                R$ 159,90
+              </strong>
+
+              <span>
+                até 6x
+              </span>
+
+            </div>
+
+            <button
+              class="primary-btn open-product"
+              type="button"
+            >
+              Ver produto
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+  SOBRE
+  ========================================= -->
+
+  <section
+    class="about"
+    id="sobre"
+  >
+
+    <div class="container about-grid">
+
+      <div class="about-image-area">
+
+        <img
+          src="images/fachada.jpg"
+          alt="Nanda Boutique"
+          class="about-image"
+        >
+
+      </div>
+
+      <div class="about-content">
+
+        <h2>
+          Sobre a Nanda Boutique
+        </h2>
+
+        <p>
+          A Nanda Boutique nasceu com a proposta de trazer elegância,
+          delicadeza e sofisticação para mulheres modernas.
+        </p>
+
+        <p>
+          O estilo da loja mistura luxo clean, feminilidade e modernidade.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+  AVALIAÇÕES
+  ========================================= -->
+
+  <section
+    class="reviews-section"
+    id="avaliacoes"
+  >
+
+    <div class="container">
+
+      <div class="section-top">
+
+        <h2>
+          Avaliações da loja
+        </h2>
+
+        <p>
+          Área visual de avaliações da boutique.
+        </p>
+
+      </div>
+
+      <div class="review-form-area">
+
+        <input
+          type="text"
+          id="reviewName"
+          placeholder="Seu nome"
+          aria-label="Seu nome"
+        >
+
+        <textarea
+          id="reviewText"
+          placeholder="Escreva sua avaliação..."
+          aria-label="Escreva sua avaliação"
+        ></textarea>
+
+        <div class="stars-area">
+
+          <span
+            class="star"
+            data-star="1"
+          >★</span>
+
+          <span
+            class="star"
+            data-star="2"
+          >★</span>
+
+          <span
+            class="star"
+            data-star="3"
+          >★</span>
+
+          <span
+            class="star"
+            data-star="4"
+          >★</span>
+
+          <span
+            class="star"
+            data-star="5"
+          >★</span>
+
+        </div>
+
+        <button
+          class="primary-btn"
+          id="submitReview"
+          type="button"
+        >
+          Publicar avaliação
+        </button>
+
+      </div>
+
+      <div
+        class="reviews-grid"
+        id="reviewsGrid"
+      ></div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+  CONTATO
+  ========================================= -->
+
+  <section
+    id="contato"
+    class="contact-section"
+  >
+
+    <div class="container">
+
+      <div class="section-top contact-title">
+
+        <h2>
+          Contato
+        </h2>
+
+        <p>
+          Informações oficiais da boutique.
+        </p>
+
+      </div>
+
+      <div class="contact-wrapper">
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+
+            <strong>
+              WhatsApp
+            </strong>
+
+            <span>
+              adicionar número oficial
+            </span>
+
+          </div>
+
+          <div class="contact-card">
+
+            <strong>
+              Instagram
+            </strong>
+
+            <span>
+              @nandaboutique
+            </span>
+
+          </div>
+
+          <div class="contact-card">
+
+            <strong>
+              Endereço
+            </strong>
+
+            <span>
+              adicionar localização da loja
+            </span>
+
+          </div>
+
+          <div class="contact-card">
+
+            <strong>
+              Horário
+            </strong>
+
+            <span>
+              Seg. a Sáb • horário comercial
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+  MODAL PRODUTO
+  ========================================= -->
+
+  <div
+    class="product-modal"
+    id="productModal"
+  >
+
+    <div class="modal-content">
+
+      <button
+        class="close-modal"
+        id="closeModal"
+        aria-label="Fechar modal"
+      >
+        ✕
+      </button>
+
+      <div class="modal-image">
+        aguardando imagens reais do produto
+      </div>
+
+      <div class="modal-info">
+
+        <span id="modalCategory">
+          Categoria
+        </span>
+
+        <h3 id="modalTitle">
+          Produto
+        </h3>
+
+        <p id="modalDescription">
+          descrição
+        </p>
+
+        <strong id="modalPrice">
+          R$ 0,00
+        </strong>
+
+        <div class="quantity-area">
+
+          <button
+            id="minusQty"
+            type="button"
+          >
+            -
+          </button>
+
+          <span id="productQty">
+            1
+          </span>
+
+          <button
+            id="plusQty"
+            type="button"
+          >
+            +
+          </button>
+
+        </div>
+
+        <button
+          class="primary-btn"
+          id="addToCart"
+          type="button"
+        >
+          Adicionar ao carrinho
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =========================================
+  CARRINHO
+  ========================================= -->
+
+  <aside
+    class="cart-sidebar"
+    id="cartSidebar"
+  >
+
+    <div class="cart-header">
+
+      <h3>
+        Seu carrinho
+      </h3>
+
+      <button
+        id="closeCart"
+        aria-label="Fechar carrinho"
+        type="button"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <!-- ITENS -->
+
+    <div id="cartItems">
+
+      <p class="empty-cart">
+        Seu carrinho está vazio.
+      </p>
+
+    </div>
+
+    <!-- RESUMO -->
+
+    <div class="cart-summary">
+
+      <div class="cart-summary-row">
+
+        <span>
+          Total do carrinho
+        </span>
+
+        <!-- ESSE ID É O MAIS IMPORTANTE -->
+        <strong id="cartTotalValue">
+          R$ 0,00
+        </strong>
+
+      </div>
+
+    </div>
+
+    <br>
+
+    <button
+      class="primary-btn"
+      type="button"
+    >
+      Comprar agora
+    </button>
+
+  </aside>
+
+  <!-- =========================================
+  LOGIN / CADASTRO
+  ========================================= -->
+
+  <section
+    class="auth-modal"
+    id="authModal"
+    aria-hidden="true"
+  >
+
+    <div class="auth-card">
+
+      <button
+        class="close-modal"
+        id="closeAuth"
+        aria-label="Fechar login"
+        type="button"
+      >
+        ✕
+      </button>
+
+      <div class="auth-top">
+
+        <h3>
+          Entre ou cadastre-se
+        </h3>
+
+        <p>
+          Acesse sua conta ou crie uma nova para acompanhar pedidos e salvar preferências.
+        </p>
+
+      </div>
+
+      <div class="auth-tabs">
+
+        <button
+          class="auth-tab active"
+          type="button"
+        >
+          Entrar
+        </button>
+
+        <button
+          class="auth-tab"
+          type="button"
+        >
+          Cadastre-se
+        </button>
+
+      </div>
+
+      <div class="auth-form">
+
+        <input
+          type="email"
+          placeholder="Seu e-mail"
+          aria-label="Seu e-mail"
+        >
+
+        <input
+          type="password"
+          placeholder="Sua senha"
+          aria-label="Sua senha"
+        >
+
+        <button
+          class="primary-btn"
+          type="button"
+        >
+          Entrar
+        </button>
+
+      </div>
+
+      <div class="auth-note">
+        Depois, essa área pode ser ligada ao banco de dados.
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+  TOAST
+  ========================================= -->
+
+  <div
+    class="toast"
+    id="toast"
+  >
+    Produto adicionado
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

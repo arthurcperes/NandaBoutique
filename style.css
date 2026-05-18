@@ -1,0 +1,1213 @@
+/* =========================================
+RESET
+========================================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fffafc;
+  color:#2b2b2b;
+  overflow-x:hidden;
+}
+
+/* =========================================
+CONTAINER
+========================================= */
+.container{
+  width:min(1180px, 92%);
+  margin:auto;
+}
+
+/* =========================================
+OVERLAY
+========================================= */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s;
+  z-index:90;
+}
+
+.overlay.show{
+  opacity:1;
+  visibility:visible;
+}
+
+/* =========================================
+MENU LATERAL
+========================================= */
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-320px;
+  width:300px;
+  height:100vh;
+  background:white;
+  z-index:120;
+  padding:30px;
+  transition:0.4s;
+  overflow-y:auto;
+  box-shadow:0 0 40px rgba(0,0,0,0.12);
+}
+
+.side-menu.show{
+  left:0;
+}
+
+.side-menu-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:35px;
+}
+
+.side-menu-top h3{
+  font-size:24px;
+}
+
+.side-menu-top button{
+  border:none;
+  background:none;
+  font-size:22px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.side-menu-top button:hover{
+  transform:scale(1.12);
+}
+
+.side-links{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.side-links a{
+  text-decoration:none;
+  color:#222;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.side-links a:hover{
+  color:#d68ca3;
+  transform:translateX(5px);
+}
+
+/* =========================================
+HEADER
+========================================= */
+.header{
+  position:sticky;
+  top:0;
+  z-index:80;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #f0dfe5;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 0;
+}
+
+/* =========================================
+LOGO
+========================================= */
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  margin-left:0;
+  transition:0.3s;
+  flex-shrink:0;
+}
+
+.logo-area:hover{
+  transform:translateY(-1px);
+}
+
+.logo-img{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.logo-text strong{
+  color:#d68ca3;
+  font-size:18px;
+}
+
+.logo-text span{
+  font-size:13px;
+  color:#777;
+}
+
+/* =========================================
+MENU DESKTOP
+========================================= */
+.menu{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  margin-left:10px;
+  margin-right:auto;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#222;
+  font-weight:500;
+  transition:0.3s;
+  position:relative;
+}
+
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0%;
+  height:2px;
+  background:#d68ca3;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  color:#d68ca3;
+}
+
+.menu a:hover::after{
+  width:100%;
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-left:auto;
+}
+
+/* =========================================
+BOTÕES TOPO
+========================================= */
+.menu-btn{
+  border:none;
+  background:none;
+  font-size:32px;
+  cursor:pointer;
+  transition:0.3s;
+  flex-shrink:0;
+  line-height:1;
+  padding:6px;
+  min-width:44px;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.menu-btn:hover{
+  transform:scale(1.08);
+}
+
+.circle-btn{
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:50%;
+  background:#fff;
+  cursor:pointer;
+  position:relative;
+  transition:0.3s;
+  font-size:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.circle-btn:hover{
+  transform:translateY(-3px) scale(1.05);
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-6px;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#d68ca3;
+  color:white;
+  font-size:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.search-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.login-btn{
+  border:none;
+  cursor:pointer;
+  height:46px;
+  padding:0 18px;
+  border-radius:999px;
+  background:#fff;
+  color:#d68ca3;
+  font-weight:600;
+  box-shadow:0 5px 20px rgba(0,0,0,0.06);
+  transition:0.3s;
+  white-space:nowrap;
+}
+
+.login-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  background:#fff3f7;
+}
+
+/* =========================================
+HERO
+========================================= */
+.hero{
+  padding:90px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero-mini-tag{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:20px;
+  color:#d68ca3;
+  font-weight:600;
+}
+
+.mini-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#d68ca3;
+}
+
+.hero-content h1{
+  font-size:58px;
+  line-height:1.05;
+  margin-bottom:22px;
+}
+
+.hero-content p{
+  color:#666;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+/* =========================================
+PESQUISA TOPO
+========================================= */
+.hero-search{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:white;
+  padding:10px;
+  border-radius:18px;
+  margin-bottom:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.hero-search input{
+  flex:1;
+  border:none;
+  outline:none;
+  font-size:15px;
+  padding:10px;
+  background:transparent;
+}
+
+.hero-search button{
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:14px;
+  background:#d68ca3;
+  color:white;
+  cursor:pointer;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.hero-search button:hover{
+  transform:scale(1.05);
+}
+
+/* =========================================
+BOTÕES
+========================================= */
+.hero-buttons{
+  display:flex;
+  gap:16px;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+  padding:15px 26px;
+  border-radius:14px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.35s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.primary-btn{
+  background:#d68ca3;
+  color:white;
+}
+
+.primary-btn:hover{
+  transform:translateY(-4px) scale(1.02);
+}
+
+.secondary-btn{
+  background:white;
+  color:#222;
+  border:1px solid #ecd4dc;
+}
+
+.secondary-btn:hover{
+  transform:translateY(-4px);
+}
+
+.product-content .primary-btn{
+  width:100%;
+  margin-top:8px;
+}
+
+/* =========================================
+HERO CARDS
+========================================= */
+.hero-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.hero-card{
+  background:white;
+  padding:22px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.hero-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.hero-card strong{
+  display:block;
+  margin-bottom:10px;
+}
+
+.hero-card span{
+  color:#666;
+  line-height:1.6;
+  font-size:14px;
+}
+
+/* =========================================
+HERO IMAGE
+========================================= */
+.hero-image-area{
+  position:relative;
+  border-radius:34px;
+  overflow:hidden;
+  min-height:700px;
+  transition:0.3s;
+}
+
+.hero-image-area:hover .hero-image{
+  transform:scale(1.03);
+}
+
+.hero-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.35s;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.1)
+  );
+}
+
+.hero-badges{
+  position:absolute;
+  top:30px;
+  left:30px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.badge{
+  background:rgba(255,255,255,0.18);
+  color:white;
+  padding:10px 16px;
+  border-radius:999px;
+  backdrop-filter:blur(10px);
+  font-size:14px;
+}
+
+.hero-image-text{
+  position:absolute;
+  left:30px;
+  bottom:30px;
+  color:white;
+}
+
+.hero-image-text h2{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+/* =========================================
+SECTIONS
+========================================= */
+section{
+  padding:90px 0;
+}
+
+.section-top{
+  margin-bottom:45px;
+}
+
+.section-top h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.section-top p{
+  color:#666;
+}
+
+/* =========================================
+PRODUTOS
+========================================= */
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:28px;
+}
+
+.product-card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:0.35s;
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.09);
+}
+
+.product-image{
+  height:270px;
+  background:#f4e7ec;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:#a26a7c;
+}
+
+.product-content{
+  padding:25px;
+}
+
+.product-category{
+  color:#d68ca3;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.product-content h3{
+  margin-bottom:12px;
+}
+
+.product-content p{
+  color:#666;
+  line-height:1.6;
+  margin-bottom:22px;
+}
+
+.product-price-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:25px;
+}
+
+/* =========================================
+SOBRE
+========================================= */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.about-image{
+  width:100%;
+  border-radius:30px;
+}
+
+.about-content h2{
+  font-size:46px;
+  margin-bottom:24px;
+}
+
+.about-content p{
+  color:#666;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+/* =========================================
+AVALIAÇÕES
+========================================= */
+.review-form-area{
+  background:white;
+  padding:30px;
+  border-radius:28px;
+  margin-bottom:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.review-form-area input,
+.review-form-area textarea{
+  width:100%;
+  border:none;
+  background:#f8f1f4;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:16px;
+  outline:none;
+}
+
+.review-form-area textarea{
+  min-height:140px;
+  resize:none;
+}
+
+.stars-area{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.star{
+  font-size:30px;
+  cursor:pointer;
+  color:#d9d9d9;
+  transition:0.3s;
+}
+
+.star.active{
+  color:#f5b301;
+}
+
+.star:hover{
+  transform:scale(1.15);
+}
+
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+.review-card{
+  background:white;
+  padding:24px;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:0.3s;
+}
+
+.review-card:hover{
+  transform:translateY(-4px);
+}
+
+.review-card-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:16px;
+}
+
+.review-stars{
+  color:#f5b301;
+}
+
+/* =========================================
+CONTATO
+========================================= */
+.contact-section{
+  background:#0f0f0f;
+  padding:90px 0;
+}
+
+.contact-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.contact-title h2{
+  color:#d68ca3;
+}
+
+.contact-title p{
+  color:#f1d8e2;
+}
+
+.contact-wrapper{
+  background:#111;
+  padding:30px;
+  border-radius:28px;
+  border:1px solid #252525;
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.contact-card{
+  background:#1a1a1a;
+  padding:26px;
+  border-radius:20px;
+  text-align:left;
+  border:1px solid #2a2a2a;
+  transition:0.3s;
+}
+
+.contact-card:hover{
+  transform:translateY(-5px) scale(1.02);
+  border-color:#d68ca3;
+}
+
+.contact-card strong{
+  display:block;
+  margin-bottom:12px;
+  color:#d68ca3;
+}
+
+.contact-card span{
+  color:#cfcfcf;
+  line-height:1.6;
+}
+
+/* =========================================
+MODAL PRODUTO
+========================================= */
+.product-modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s;
+  z-index:110;
+}
+
+.product-modal.show{
+  opacity:1;
+  visibility:visible;
+}
+
+.modal-content{
+  background:white;
+  width:min(950px, 92%);
+  border-radius:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  overflow:hidden;
+  position:relative;
+}
+
+.close-modal{
+  position:absolute;
+  top:20px;
+  right:20px;
+  border:none;
+  background:white;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.close-modal:hover{
+  transform:rotate(90deg) scale(1.05);
+}
+
+.modal-image{
+  min-height:520px;
+  background:#f4e7ec;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px;
+}
+
+.modal-info{
+  padding:45px;
+}
+
+.modal-info span{
+  color:#d68ca3;
+}
+
+.modal-info h3{
+  font-size:40px;
+  margin:18px 0;
+}
+
+.modal-info p{
+  color:#666;
+  line-height:1.8;
+  margin-bottom:22px;
+}
+
+.modal-info strong{
+  display:block;
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+/* =========================================
+QUANTIDADE
+========================================= */
+.quantity-area{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:28px;
+}
+
+.quantity-area button{
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:12px;
+  background:#f4e7ec;
+  cursor:pointer;
+  font-size:22px;
+  transition:0.3s;
+}
+
+.quantity-area button:hover{
+  transform:scale(1.08);
+  background:#ecd4dc;
+}
+
+#productQty{
+  font-size:20px;
+  font-weight:700;
+}
+
+/* =========================================
+CARRINHO
+========================================= */
+.cart-sidebar{
+  position:fixed;
+  top:0;
+  right:-420px;
+  width:390px;
+  height:100vh;
+  background:white;
+  z-index:120;
+  padding:30px;
+  transition:0.4s;
+  overflow-y:auto;
+  box-shadow:0 0 40px rgba(0,0,0,0.12);
+}
+
+.cart-sidebar.show{
+  right:0;
+}
+
+.cart-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:30px;
+}
+
+.cart-header button{
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-size:22px;
+}
+
+.cart-item{
+  padding:20px;
+  border-radius:18px;
+  background:#faf4f6;
+  margin-bottom:16px;
+  transition:0.3s;
+}
+
+.cart-item:hover{
+  transform:translateY(-3px);
+}
+
+.cart-item h4{
+  margin-bottom:12px;
+}
+
+.cart-qty-controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:12px 0;
+}
+
+.cart-qty-controls button{
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:10px;
+  background:#e8c6d1;
+  cursor:pointer;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.cart-qty-controls button:hover{
+  transform:scale(1.08);
+}
+
+.cart-qty-controls span{
+  min-width:20px;
+  text-align:center;
+  font-weight:700;
+}
+
+.remove-btn{
+  border:none;
+  background:#e8c6d1;
+  padding:10px 16px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top:14px;
+}
+
+.remove-btn:hover{
+  transform:scale(1.05);
+}
+
+.cart-summary{
+  margin-top:18px;
+  padding:18px;
+  border-radius:18px;
+  background:#f8f1f4;
+  border:1px solid #edd9e2;
+}
+
+.cart-summary-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.cart-summary-row span{
+  color:#666;
+  font-size:14px;
+}
+
+.cart-summary-row strong{
+  color:#2b2b2b;
+  font-size:22px;
+}
+
+/* =========================================
+LOGIN
+========================================= */
+.auth-modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.45);
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s;
+  z-index:140;
+  padding:20px;
+}
+
+.auth-modal.show{
+  opacity:1;
+  visibility:visible;
+}
+
+.auth-card{
+  width:min(520px, 100%);
+  background:#fff;
+  border-radius:30px;
+  padding:34px;
+  position:relative;
+  box-shadow:0 25px 60px rgba(0,0,0,0.18);
+}
+
+.auth-top{
+  margin-bottom:24px;
+}
+
+.auth-top h3{
+  font-size:32px;
+  margin-bottom:10px;
+  color:#2b2b2b;
+}
+
+.auth-top p{
+  color:#666;
+  line-height:1.7;
+}
+
+.auth-tabs{
+  display:flex;
+  gap:12px;
+  margin-bottom:22px;
+}
+
+.auth-tab{
+  flex:1;
+  border:none;
+  cursor:pointer;
+  height:46px;
+  border-radius:14px;
+  background:#f8f1f4;
+  color:#444;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.auth-tab.active{
+  background:#d68ca3;
+  color:#fff;
+}
+
+.auth-tab:hover{
+  transform:translateY(-2px);
+}
+
+.auth-form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.auth-form input{
+  width:100%;
+  border:none;
+  outline:none;
+  background:#f8f1f4;
+  border-radius:16px;
+  padding:16px;
+}
+
+.auth-note{
+  margin-top:18px;
+  color:#777;
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* =========================================
+TOAST
+========================================= */
+.toast{
+  position:fixed;
+  right:30px;
+  bottom:30px;
+  background:#222;
+  color:white;
+  padding:16px 24px;
+  border-radius:16px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px);
+  transition:0.3s;
+  z-index:300;
+}
+
+.toast.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* =========================================
+RESPONSIVO
+========================================= */
+@media(max-width:1100px){
+
+  .hero-grid,
+  .about-grid,
+  .modal-content{
+    grid-template-columns:1fr;
+  }
+
+  .products-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-cards{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:900px){
+
+  .menu{
+    display:none;
+  }
+
+  .hero-content h1{
+    font-size:42px;
+  }
+
+  .nav{
+    gap:12px;
+  }
+
+  .nav-actions{
+    gap:10px;
+  }
+
+  .menu-btn{
+    font-size:30px;
+    min-width:42px;
+    min-height:42px;
+  }
+}
+
+@media(max-width:780px){
+
+  .products-grid,
+  .reviews-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image-area{
+    min-height:520px;
+  }
+}
+
+@media(max-width:520px){
+
+  .hero{
+    padding:60px 0;
+  }
+
+  .hero-content h1{
+    font-size:34px;
+  }
+
+  .section-top h2,
+  .about-content h2{
+    font-size:32px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .cart-sidebar{
+    width:100%;
+  }
+
+  .login-btn{
+    padding:0 14px;
+    font-size:14px;
+  }
+
+  .auth-card{
+    padding:24px;
+  }
+
+  .auth-top h3{
+    font-size:26px;
+  }
+
+  .auth-tabs{
+    flex-direction:column;
+  }
+}
