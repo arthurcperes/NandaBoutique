@@ -18,6 +18,11 @@ body{
   overflow-x:hidden;
 }
 
+img{
+  max-width:100%;
+  display:block;
+}
+
 /* =========================================
 CONTAINER
 ========================================= */
@@ -52,6 +57,7 @@ MENU LATERAL
   top:0;
   left:-320px;
   width:300px;
+  max-width:85%;
   height:100vh;
   background:white;
   z-index:120;
@@ -121,8 +127,10 @@ HEADER
 .nav{
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:14px;
-  padding:18px 0;
+  padding:16px 0;
+  flex-wrap:wrap;
 }
 
 /* =========================================
@@ -133,9 +141,9 @@ LOGO
   align-items:center;
   gap:12px;
   text-decoration:none;
-  margin-left:0;
   transition:0.3s;
-  flex-shrink:0;
+  flex:1;
+  min-width:0;
 }
 
 .logo-area:hover{
@@ -154,16 +162,23 @@ LOGO
   display:flex;
   flex-direction:column;
   line-height:1.1;
+  min-width:0;
 }
 
 .logo-text strong{
   color:#d68ca3;
-  font-size:18px;
+  font-size:20px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .logo-text span{
   font-size:13px;
   color:#777;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 /* =========================================
@@ -208,7 +223,7 @@ MENU DESKTOP
   display:flex;
   align-items:center;
   gap:12px;
-  margin-left:auto;
+  flex-shrink:0;
 }
 
 /* =========================================
@@ -220,7 +235,6 @@ BOTÕES TOPO
   font-size:32px;
   cursor:pointer;
   transition:0.3s;
-  flex-shrink:0;
   line-height:1;
   padding:6px;
   min-width:44px;
@@ -248,6 +262,7 @@ BOTÕES TOPO
   display:flex;
   align-items:center;
   justify-content:center;
+  flex-shrink:0;
 }
 
 .circle-btn:hover{
@@ -264,12 +279,6 @@ BOTÕES TOPO
   background:#d68ca3;
   color:white;
   font-size:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.search-btn{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -315,6 +324,7 @@ HERO
   margin-bottom:20px;
   color:#d68ca3;
   font-weight:600;
+  flex-wrap:wrap;
 }
 
 .mini-dot{
@@ -328,6 +338,7 @@ HERO
   font-size:58px;
   line-height:1.05;
   margin-bottom:22px;
+  word-break:break-word;
 }
 
 .hero-content p{
@@ -357,6 +368,7 @@ PESQUISA TOPO
   font-size:15px;
   padding:10px;
   background:transparent;
+  min-width:0;
 }
 
 .hero-search button{
@@ -369,6 +381,7 @@ PESQUISA TOPO
   cursor:pointer;
   font-size:18px;
   transition:0.3s;
+  flex-shrink:0;
 }
 
 .hero-search button:hover{
@@ -467,15 +480,15 @@ HERO IMAGE
   transition:0.3s;
 }
 
-.hero-image-area:hover .hero-image{
-  transform:scale(1.03);
-}
-
 .hero-image{
   width:100%;
   height:100%;
   object-fit:cover;
   transition:0.35s;
+}
+
+.hero-image-area:hover .hero-image{
+  transform:scale(1.03);
 }
 
 .hero-overlay{
@@ -931,14 +944,18 @@ CARRINHO
 }
 
 .cart-qty-controls button{
-  width:34px;
-  height:34px;
+  width:38px;
+  height:38px;
   border:none;
   border-radius:10px;
   background:#e8c6d1;
   cursor:pointer;
   font-size:18px;
   transition:0.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
 }
 
 .cart-qty-controls button:hover{
@@ -946,9 +963,10 @@ CARRINHO
 }
 
 .cart-qty-controls span{
-  min-width:20px;
+  min-width:24px;
   text-align:center;
   font-weight:700;
+  font-size:16px;
 }
 
 .remove-btn{
@@ -1131,6 +1149,10 @@ RESPONSIVO
   .contact-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
+  .hero-image-area{
+    min-height:500px;
+  }
 }
 
 @media(max-width:900px){
@@ -1139,26 +1161,40 @@ RESPONSIVO
     display:none;
   }
 
+  .nav{
+    flex-wrap:nowrap;
+  }
+
   .hero-content h1{
     font-size:42px;
   }
 
-  .nav{
-    gap:12px;
+  .logo-text strong{
+    font-size:18px;
   }
 
-  .nav-actions{
-    gap:10px;
+  .logo-text span{
+    font-size:12px;
   }
 
-  .menu-btn{
-    font-size:30px;
-    min-width:42px;
-    min-height:42px;
+  .login-btn{
+    display:none;
   }
 }
 
 @media(max-width:780px){
+
+  section{
+    padding:70px 0;
+  }
+
+  .hero{
+    padding:60px 0;
+  }
+
+  .hero-grid{
+    gap:40px;
+  }
 
   .products-grid,
   .reviews-grid,
@@ -1167,36 +1203,160 @@ RESPONSIVO
   }
 
   .hero-image-area{
-    min-height:520px;
-  }
-}
-
-@media(max-width:520px){
-
-  .hero{
-    padding:60px 0;
+    min-height:420px;
   }
 
   .hero-content h1{
-    font-size:34px;
+    font-size:38px;
   }
 
   .section-top h2,
   .about-content h2{
-    font-size:32px;
+    font-size:34px;
   }
 
   .hero-buttons{
     flex-direction:column;
   }
 
+  .primary-btn,
+  .secondary-btn{
+    width:100%;
+  }
+}
+
+@media(max-width:520px){
+
+  .container{
+    width:92%;
+  }
+
+  .nav{
+    gap:8px;
+    padding:14px 0;
+  }
+
+  .logo-area{
+    gap:10px;
+  }
+
+  .logo-img{
+    width:50px;
+    height:50px;
+  }
+
+  .logo-text strong{
+    font-size:16px;
+  }
+
+  .logo-text span{
+    font-size:11px;
+  }
+
+  .circle-btn{
+    width:42px;
+    height:42px;
+    font-size:16px;
+  }
+
+  .menu-btn{
+    font-size:28px;
+    min-width:40px;
+    min-height:40px;
+  }
+
+  .hero{
+    padding:50px 0;
+  }
+
+  .hero-content h1{
+    font-size:30px;
+    line-height:1.15;
+  }
+
+  .hero-content p{
+    font-size:16px;
+  }
+
+  .section-top h2,
+  .about-content h2{
+    font-size:28px;
+  }
+
+  .hero-search{
+    padding:8px;
+  }
+
+  .hero-search input{
+    font-size:14px;
+  }
+
+  .hero-search button{
+    width:46px;
+    height:46px;
+  }
+
+  .hero-image-area{
+    min-height:320px;
+    border-radius:24px;
+  }
+
+  .hero-image-text{
+    left:20px;
+    bottom:20px;
+  }
+
+  .hero-image-text h2{
+    font-size:24px;
+  }
+
+  .hero-badges{
+    top:20px;
+    left:20px;
+  }
+
+  .badge{
+    font-size:12px;
+    padding:8px 12px;
+  }
+
+  .product-content{
+    padding:20px;
+  }
+
+  .review-form-area{
+    padding:20px;
+  }
+
+  .side-menu{
+    width:85%;
+  }
+
   .cart-sidebar{
+    width:100%;
+    padding:22px;
+  }
+
+  .cart-item{
+    padding:18px;
+  }
+
+  .cart-qty-controls{
+    gap:8px;
+  }
+
+  .cart-qty-controls button{
+    width:36px;
+    height:36px;
+  }
+
+  .remove-btn{
+    padding:10px 14px;
     width:100%;
   }
 
-  .login-btn{
-    padding:0 14px;
-    font-size:14px;
+  .cart-summary{
+    padding:16px;
   }
 
   .auth-card{
@@ -1209,5 +1369,12 @@ RESPONSIVO
 
   .auth-tabs{
     flex-direction:column;
+  }
+
+  .toast{
+    right:16px;
+    left:16px;
+    bottom:20px;
+    text-align:center;
   }
 }
