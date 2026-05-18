@@ -122,6 +122,7 @@ HEADER
   background:rgba(255,255,255,0.92);
   backdrop-filter:blur(14px);
   border-bottom:1px solid #f0dfe5;
+  transition:transform 0.28s ease;
 }
 
 .nav{
@@ -785,6 +786,8 @@ MODAL PRODUTO
   visibility:hidden;
   transition:0.3s;
   z-index:110;
+  padding:20px 0;
+  overflow-y:auto;
 }
 
 .product-modal.show{
@@ -800,6 +803,7 @@ MODAL PRODUTO
   grid-template-columns:1fr 1fr;
   overflow:hidden;
   position:relative;
+  max-height:calc(100vh - 40px);
 }
 
 .close-modal{
@@ -813,6 +817,7 @@ MODAL PRODUTO
   border-radius:50%;
   cursor:pointer;
   transition:0.3s;
+  z-index:5;
 }
 
 .close-modal:hover{
@@ -831,6 +836,8 @@ MODAL PRODUTO
 
 .modal-info{
   padding:45px;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .modal-info span{
@@ -862,6 +869,7 @@ QUANTIDADE
   align-items:center;
   gap:18px;
   margin-bottom:28px;
+  flex-wrap:wrap;
 }
 
 .quantity-area button{
@@ -1153,6 +1161,14 @@ RESPONSIVO
   .hero-image-area{
     min-height:500px;
   }
+
+  .modal-content{
+    max-height:92vh;
+  }
+
+  .modal-image{
+    min-height:320px;
+  }
 }
 
 @media(max-width:900px){
@@ -1179,6 +1195,14 @@ RESPONSIVO
 
   .login-btn{
     display:none;
+  }
+
+  .modal-info{
+    padding:35px;
+  }
+
+  .modal-info h3{
+    font-size:34px;
   }
 }
 
@@ -1222,6 +1246,58 @@ RESPONSIVO
   .primary-btn,
   .secondary-btn{
     width:100%;
+  }
+
+  .modal-content{
+    width:94%;
+    border-radius:24px;
+  }
+
+  .modal-image{
+    min-height:260px;
+    padding:20px;
+  }
+
+  .modal-info{
+    padding:28px;
+  }
+
+  .modal-info h3{
+    font-size:30px;
+    line-height:1.1;
+  }
+
+  .modal-info p{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .modal-info strong{
+    font-size:24px;
+    margin-bottom:22px;
+  }
+
+  .quantity-area{
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .quantity-area button{
+    width:42px;
+    height:42px;
+  }
+
+  #addToCart{
+    width:100%;
+  }
+
+  .product-content .primary-btn{
+    width:100%;
+    padding:13px 18px;
+    font-size:14px;
+    min-height:46px;
+    border-radius:12px;
   }
 }
 
@@ -1320,8 +1396,49 @@ RESPONSIVO
     padding:8px 12px;
   }
 
+  .product-card{
+    border-radius:20px;
+  }
+
+  .product-image{
+    height:240px;
+    font-size:14px;
+    padding:18px;
+  }
+
   .product-content{
     padding:20px;
+  }
+
+  .product-content h3{
+    font-size:20px;
+    line-height:1.15;
+    margin-bottom:12px;
+  }
+
+  .product-content p{
+    font-size:15px;
+    margin-bottom:18px;
+  }
+
+  .product-price-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+    margin-bottom:18px;
+  }
+
+  .product-price-row strong{
+    font-size:20px;
+  }
+
+  .product-content .primary-btn{
+    width:100%;
+    min-height:44px;
+    padding:12px 16px;
+    font-size:14px;
+    border-radius:12px;
+    margin-top:0;
   }
 
   .review-form-area{
@@ -1341,8 +1458,14 @@ RESPONSIVO
     padding:18px;
   }
 
+  .cart-item h4{
+    font-size:17px;
+    line-height:1.4;
+  }
+
   .cart-qty-controls{
     gap:8px;
+    flex-wrap:wrap;
   }
 
   .cart-qty-controls button{
@@ -1376,5 +1499,67 @@ RESPONSIVO
     left:16px;
     bottom:20px;
     text-align:center;
+  }
+
+  .modal-content{
+    width:95%;
+    border-radius:22px;
+    max-height:92vh;
+    overflow-y:auto;
+  }
+
+  .modal-image{
+    min-height:180px;
+    padding:16px;
+    font-size:14px;
+  }
+
+  .modal-info{
+    padding:22px;
+  }
+
+  .modal-info span{
+    font-size:14px;
+  }
+
+  .modal-info h3{
+    font-size:26px;
+    margin:14px 0;
+    line-height:1.1;
+  }
+
+  .modal-info p{
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:18px;
+  }
+
+  .modal-info strong{
+    font-size:22px;
+    margin-bottom:20px;
+  }
+
+  .quantity-area{
+    width:100%;
+    justify-content:center;
+    margin-bottom:22px;
+  }
+
+  .quantity-area button{
+    width:40px;
+    height:40px;
+    font-size:20px;
+  }
+
+  #productQty{
+    font-size:18px;
+    min-width:24px;
+    text-align:center;
+  }
+
+  #addToCart{
+    width:100%;
+    min-height:52px;
+    font-size:15px;
   }
 }
