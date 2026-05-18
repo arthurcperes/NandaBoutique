@@ -75,6 +75,16 @@ function closeEverything() {
   productModal.classList.remove("show");
   authModal.classList.remove("show");
   overlay.classList.remove("show");
+
+  document.body.style.overflow = "auto";
+}
+
+function openOverlay() {
+  overlay.classList.add("show");
+
+  if (window.innerWidth <= 768) {
+    document.body.style.overflow = "hidden";
+  }
 }
 
 function parsePriceBRL(value) {
@@ -114,12 +124,12 @@ MENU
 ========================================= */
 openMenu?.addEventListener("click", () => {
   sideMenu.classList.add("show");
-  overlay.classList.add("show");
+  openOverlay();
 });
 
 closeMenu?.addEventListener("click", closeEverything);
 
-overlay.addEventListener("click", closeEverything);
+overlay?.addEventListener("click", closeEverything);
 
 /* =========================================
 FILTROS
@@ -136,6 +146,16 @@ function filterProducts(category) {
         ? "block"
         : "none";
   });
+
+  if (window.innerWidth <= 768) {
+    const productsSection = document.getElementById("produtos");
+
+    if (productsSection) {
+      productsSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }
 }
 
 menuFilters.forEach((button) => {
@@ -167,12 +187,12 @@ searchButton?.addEventListener("click", searchProducts);
 searchInput?.addEventListener("keyup", searchProducts);
 
 searchToggle?.addEventListener("click", () => {
-  searchArea.scrollIntoView({
+  searchArea?.scrollIntoView({
     behavior: "smooth",
   });
 
   setTimeout(() => {
-    searchInput.focus();
+    searchInput?.focus();
   }, 400);
 });
 
@@ -213,7 +233,8 @@ openProductButtons.forEach((button) => {
     modalPrice.innerText = formatBRL(unitPrice);
 
     productModal.classList.add("show");
-    overlay.classList.add("show");
+
+    openOverlay();
   });
 });
 
@@ -253,7 +274,8 @@ ABRIR CARRINHO
 ========================================= */
 cartToggle?.addEventListener("click", () => {
   cartSidebar.classList.add("show");
-  overlay.classList.add("show");
+
+  openOverlay();
 });
 
 closeCart?.addEventListener("click", closeEverything);
@@ -283,6 +305,13 @@ addToCart?.addEventListener("click", () => {
 
   productModal.classList.remove("show");
   overlay.classList.remove("show");
+
+  if (window.innerWidth <= 768) {
+    setTimeout(() => {
+      cartSidebar.classList.add("show");
+      openOverlay();
+    }, 300);
+  }
 });
 
 /* =========================================
@@ -409,7 +438,8 @@ LOGIN
 ========================================= */
 loginButton?.addEventListener("click", () => {
   authModal.classList.add("show");
-  overlay.classList.add("show");
+
+  openOverlay();
 });
 
 closeAuth?.addEventListener("click", closeEverything);
@@ -477,6 +507,40 @@ submitReview?.addEventListener("click", () => {
   });
 
   showToast("Avaliação publicada");
+});
+
+/* =========================================
+SCROLL HEADER MOBILE
+========================================= */
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
+
+  if (!header) return;
+
+  const currentScroll = window.pageYOffset;
+
+  if (
+    currentScroll > lastScroll &&
+    currentScroll > 120 &&
+    window.innerWidth <= 768
+  ) {
+    header.style.transform = "translateY(-100%)";
+  } else {
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+});
+
+/* =========================================
+AJUSTE AUTOMÁTICO MOBILE
+========================================= */
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    document.body.style.overflow = "auto";
+  }
 });
 
 /* =========================================
