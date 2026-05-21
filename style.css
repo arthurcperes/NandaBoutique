@@ -1138,7 +1138,7 @@ TOAST
 /* =========================================
 RESPONSIVO
 ========================================= */
-@media(max-width:1100px){
+@media (max-width:1100px){
 
   .hero-grid,
   .about-grid,
@@ -1171,7 +1171,7 @@ RESPONSIVO
   }
 }
 
-@media(max-width:900px){
+@media (max-width:900px){
 
   .menu{
     display:none;
@@ -1179,6 +1179,11 @@ RESPONSIVO
 
   .nav{
     flex-wrap:nowrap;
+    gap:10px;
+  }
+
+  .logo-area{
+    min-width:0;
   }
 
   .hero-content h1{
@@ -1197,6 +1202,10 @@ RESPONSIVO
     display:none;
   }
 
+  .nav-actions{
+    gap:8px;
+  }
+
   .modal-info{
     padding:35px;
   }
@@ -1206,7 +1215,7 @@ RESPONSIVO
   }
 }
 
-@media(max-width:780px){
+@media (max-width:780px){
 
   section{
     padding:70px 0;
@@ -1246,6 +1255,10 @@ RESPONSIVO
   .primary-btn,
   .secondary-btn{
     width:100%;
+  }
+
+  .hero-search{
+    flex-wrap:nowrap;
   }
 
   .modal-content{
@@ -1301,7 +1314,7 @@ RESPONSIVO
   }
 }
 
-@media(max-width:520px){
+@media (max-width:520px){
 
   .container{
     width:92%;
@@ -1561,5 +1574,209 @@ RESPONSIVO
     width:100%;
     min-height:52px;
     font-size:15px;
+  }
+}
+
+@media (max-width:420px){
+
+  .nav{
+    gap:6px;
+    padding:12px 0;
+  }
+
+  .logo-img{
+    width:46px;
+    height:46px;
+  }
+
+  .logo-text strong{
+    font-size:15px;
+  }
+
+  .logo-text span{
+    display:none;
+  }
+
+  .circle-btn{
+    width:40px;
+    height:40px;
+    font-size:15px;
+  }
+
+  .menu-btn{
+    font-size:26px;
+    min-width:38px;
+    min-height:38px;
+  }
+
+  .hero{
+    padding:44px 0;
+  }
+
+  .hero-mini-tag{
+    font-size:13px;
+  }
+
+  .hero-content h1{
+    font-size:26px;
+  }
+
+  .hero-content p{
+    font-size:15px;
+  }
+
+  .section-top h2,
+  .about-content h2{
+    font-size:24px;
+  }
+
+  .hero-image-area{
+    min-height:280px;
+    border-radius:22px;
+  }
+
+  .hero-image-text h2{
+    font-size:22px;
+  }
+
+  .hero-image-text p{
+    font-size:14px;
+  }
+
+  .badge{
+    font-size:11px;
+    padding:7px 10px;
+  }
+
+  .product-image{
+    height:220px;
+    font-size:13px;
+  }
+
+  .product-content{
+    padding:18px;
+  }
+
+  .product-content h3{
+    font-size:18px;
+  }
+
+  .product-content p{
+    font-size:14px;
+  }
+
+  .review-form-area{
+    padding:18px;
+  }
+
+  .auth-card{
+    padding:20px;
+    border-radius:24px;
+  }
+
+  .auth-top h3{
+    font-size:24px;
+  }
+
+  .auth-top p{
+    font-size:14px;
+  }
+
+  .side-menu{
+    width:90%;
+    padding:24px;
+  }
+
+  .side-menu-top h3{
+    font-size:22px;
+  }
+
+  .cart-sidebar{
+    padding:18px;
+  }
+
+  .cart-header h3{
+    font-size:20px;
+  }
+
+  .cart-item{
+    padding:16px;
+  }
+
+  .cart-summary-row strong{
+    font-size:20px;
+  }
+
+  .modal-content{
+    width:96%;
+    border-radius:20px;
+  }
+
+  .modal-image{
+    min-height:160px;
+    padding:14px;
+    font-size:13px;
+  }
+
+  .modal-info{
+    padding:18px;
+  }
+
+  .modal-info h3{
+    font-size:24px;
+  }
+
+  .modal-info strong{
+    font-size:20px;
+  }
+}
+
+@media (max-width:360px){
+
+  .hero-search{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-search button{
+    width:100%;
+  }
+
+  .hero-buttons{
+    gap:12px;
+  }
+
+  .primary-btn,
+  .secondary-btn{
+    padding:14px 18px;
+  }
+
+  .hero-content h1{
+    font-size:24px;
+  }
+
+  .section-top h2,
+  .about-content h2{
+    font-size:22px;
+  }
+
+  .hero-image-area{
+    min-height:250px;
+  }
+
+  .hero-image-text h2{
+    font-size:20px;
+  }
+
+  .product-image{
+    height:200px;
+  }
+
+  .modal-info h3{
+    font-size:22px;
+  }
+
+  .auth-tabs .auth-tab{
+    height:44px;
   }
 }
